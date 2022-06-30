@@ -286,3 +286,11 @@ def calculate_results(y_true, y_pred):
                   "recall": model_recall,
                   "f1": model_f1}
   return model_results
+
+# Create a ModelCheckpoint callback that saves the model's weights only
+checkpoint_callback = tf.keras.callbacks.ModelCheckpoint(filepath=checkpoint_path,
+                                                        save_weights_only=True,
+                                                        save_best_only=False,
+                                                        save_freq="epoch", #save every epoch
+                                                        verbose=1)
+
