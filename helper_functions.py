@@ -288,7 +288,7 @@ def calculate_results(y_true, y_pred):
   return model_results
 
 # Create a ModelCheckpoint callback that saves the model's weights only
-checkpoint_callback = tf.keras.callbacks.ModelCheckpoint(filepath,
+checkpoint_callback = tf.keras.callbacks.ModelCheckpoint(filepath="path/filename for ckpt file",
                                                         save_weights_only=True,
                                                         save_best_only=False,
                                                         save_freq="epoch", #save every epoch
